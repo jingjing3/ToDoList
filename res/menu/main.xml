@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_settings"/>
+    <item 
+        android:id="@+id/addEventItem" 
+        android:title="Add a Event" 
+        android:onClick="addEvent"></item>
+    
+    <item android:id="@+id/archiveItem" 
+        android:onClick="archievedEvents" 
+        android:title="Archived Events"></item>
+
+    <item android:id="@+id/emailALLEventItem" 
+        android:onClick="emailAllEvent" 
+        android:title="Email All"></item>
+    
+    <item android:id="@+id/statisticItem" 
+        android:onClick="statisticsEvent" 
+        android:title="Statistics"></item>
+</menu>

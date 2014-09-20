@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/addEventView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Adding a new to-do event"
+        android:textSize="24dp" />
+
+    <EditText
+        android:id="@+id/addEventTitleTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addEventView"
+        android:ems="10"
+        android:hint="Please type a title" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/addEventDescriptionTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/emailCancelButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/addEventTitleTextField"
+        android:ems="10"
+        android:hint="Please type a description (option)"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/emailCancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:minWidth="160dp"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/emailCancelButton"
+        android:layout_toRightOf="@+id/emailCancelButton"
+        android:text="Finish" />
+
+</RelativeLayout>
