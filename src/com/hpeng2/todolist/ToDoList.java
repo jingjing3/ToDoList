@@ -23,4 +23,12 @@ public class ToDoList {
 		toDoList.remove(targetToDoAction);
 	}
 
+	public int size(){
+		return toDoList.size();
+	}
+	
+	public ToDoEvent getElement(int i){
+		return toDoList.get(i);
+	}
+
 }
