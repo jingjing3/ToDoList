@@ -7,9 +7,8 @@ public class ToDoEvent {
 	private Boolean checkFlag;
 	private Boolean archiveFlag;
 	
-	ToDoEvent(String title, String Description){
+	ToDoEvent(String title){
 		this.title = title;
-		this.description = Description;
 		this.checkFlag = false;
 		this.archiveFlag = false;
 	}

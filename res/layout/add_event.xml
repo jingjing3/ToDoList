@@ -30,7 +30,6 @@
         android:id="@+id/addEventDescriptionTextField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/emailCancelButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/addEventTitleTextField"
@@ -39,22 +38,13 @@
         android:inputType="textMultiLine" />
 
     <Button
-        android:id="@+id/emailCancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:minWidth="160dp"
-        android:text="Cancel" />
-
-    <Button
         android:id="@+id/finishButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/emailCancelButton"
-        android:layout_toRightOf="@+id/emailCancelButton"
+        android:onClick="AddAEvent"
         android:text="Finish" />
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.hpeng2.todolist;
 
+
 public class ToDoListController {
 	
 	private static ToDoList toDoList = null;
@@ -18,12 +19,16 @@ public class ToDoListController {
 		}
 		for (int i=0; i<toDoList.size(); i++){
 			if (toDoList.getElement(i).getArchiveFlag() == true){
-				archivedList.addToDoAction(toDoList.getElement(i));
+				archivedList.addToDoEvent(toDoList.getElement(i));
 			}
 		}
 		return archivedList;
 		
 		
+	}
+	
+	public void addingAEvent(ToDoEvent newEvent) {
+		 getToDoList().addToDoEvent(newEvent);
 	}
 
 }

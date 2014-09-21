@@ -24,26 +24,25 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080011;
+        public static final int action_settings=0x7f080010;
         public static final int addEventDescriptionTextField=0x7f080004;
-        public static final int addEventItem=0x7f080012;
+        public static final int addEventItem=0x7f080011;
         public static final int addEventTitleTextField=0x7f080003;
         public static final int addEventView=0x7f080002;
-        public static final int archiveEventView=0x7f080007;
-        public static final int archiveItem=0x7f080013;
-        public static final int archivedEventListView=0x7f080009;
-        public static final int emailALLEventItem=0x7f080014;
-        public static final int emailAddressTextField=0x7f08000b;
-        public static final int emailCancelButton=0x7f080005;
-        public static final int emailEventView=0x7f08000a;
-        public static final int finishButton=0x7f080006;
-        public static final int listView1=0x7f08000d;
-        public static final int returnButton=0x7f080008;
-        public static final int sendButton=0x7f08000c;
-        public static final int statisticItem=0x7f080015;
-        public static final int statisticTextView=0x7f080010;
-        public static final int statsReturnButton=0x7f08000e;
-        public static final int statsTextView=0x7f08000f;
+        public static final int archiveEventView=0x7f080006;
+        public static final int archiveItem=0x7f080012;
+        public static final int archivedEventListView=0x7f080007;
+        public static final int checkBox=0x7f08000c;
+        public static final int emailALLEventItem=0x7f080013;
+        public static final int emailAddressTextField=0x7f080009;
+        public static final int emailEventView=0x7f080008;
+        public static final int finishButton=0x7f080005;
+        public static final int listView1=0x7f08000b;
+        public static final int rowEventTitleTextView=0x7f08000d;
+        public static final int sendButton=0x7f08000a;
+        public static final int statisticItem=0x7f080014;
+        public static final int statisticTextView=0x7f08000f;
+        public static final int statsTextView=0x7f08000e;
         public static final int toDoListTextView=0x7f080000;
         public static final int toDoListView=0x7f080001;
     }
@@ -56,7 +55,8 @@ public final class R {
         public static final int add_event=0x7f030005;
         public static final int archive_event=0x7f030006;
         public static final int email_event=0x7f030007;
-        public static final int stats_event=0x7f030008;
+        public static final int row=0x7f030008;
+        public static final int stats_event=0x7f030009;
     }
     public static final class menu {
         public static final int add_event=0x7f070000;
