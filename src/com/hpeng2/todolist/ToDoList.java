@@ -6,8 +6,8 @@ import java.util.*;
 
 public class ToDoList {
 	
-	protected ArrayList<ToDoEvent> toDoList;
-	protected ArrayList<Listener> listeners;
+	protected ArrayList<ToDoEvent> toDoList = null;
+	protected ArrayList<Listener> listeners = null;
 	
 	public ToDoList(){
 		toDoList = new ArrayList<ToDoEvent>();
@@ -43,10 +43,6 @@ public class ToDoList {
 		return toDoList.get(i);
 	}
 
-	public ToDoEvent[] toArray(ToDoEvent[] toDoListArray) {
-		Collections.addAll(toDoList, toDoListArray);
-		return toDoListArray;
-	}
 	
 	
 	

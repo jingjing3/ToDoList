@@ -1,5 +1,7 @@
 package com.hpeng2.todolist;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,16 +13,10 @@ import android.widget.TextView;
 
 public class ToDoListAdapter extends ArrayAdapter<ToDoEvent>{
 	
-	ToDoEvent[] toDoListArray = null;
+	ArrayList<ToDoEvent> toDoListArray = null;
 	Context context;
 	
-	public ToDoEvent[] convertArrayListToArray(){
-		toDoListArray = new ToDoEvent[ToDoListController.getToDoList().size()];
-		toDoListArray = (ToDoListController.getToDoList()).toArray(toDoListArray);
-		return toDoListArray;
-	}
-	
-	public ToDoListAdapter(Context context, ToDoEvent[] resource){
+	public ToDoListAdapter(Context context, ArrayList<ToDoEvent> resource){
 		super(context, R.layout.row, resource);
 		this.context = context;
 		this.toDoListArray = resource;
@@ -33,8 +29,8 @@ public class ToDoListAdapter extends ArrayAdapter<ToDoEvent>{
 		 convertView = inflater.inflate(R.layout.row, parent, false); 
 		 TextView name = (TextView) convertView.findViewById(R.id.rowEventTitleTextView);
 		 CheckBox cb = (CheckBox) convertView.findViewById(R.id.checkBox);
-		 name.setText(toDoListArray[position].getTitle());
-		 if(toDoListArray[position].getCheckFlag() == true){
+		 name.setText(toDoListArray.get(position).getTitle());
+		 if(toDoListArray.get(position).getCheckFlag() == true){
 		 cb.setChecked(true);}
 		 else{
 		 cb.setChecked(false);}

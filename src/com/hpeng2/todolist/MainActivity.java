@@ -21,31 +21,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ListView lv = (ListView) findViewById(R.id.toDoListView);
-		/* Unqoute to test the listView with checkbox layout
-		ToDoEvent[] test = new ToDoEvent[3];
-		test[0] = new ToDoEvent("a");
-		test[1] = new ToDoEvent("b");
-		test[2] = new ToDoEvent("c");
-		ToDoListAdapter adapter = new ToDoListAdapter(this, test);*/
-		
-		
-		
-		
 		Collection<ToDoEvent> events = ToDoListController.getToDoList().getToDoList();
 		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(events);
-		
-		int size = events.size();
-		ToDoEvent[] toDoListArray = new ToDoEvent[size];
-		for (int i=0; i<size; i++){
-			toDoListArray[i] = (ToDoListController.getToDoList().getElement(i));
-		}
-		
-		final ToDoListAdapter adapter = new ToDoListAdapter(this, toDoListArray);
-		//final ToDoListAdapter adapter = new ToDoListAdapter(this, toDoListArray);
+		final ToDoListAdapter adapter = new ToDoListAdapter(this, list);
 		lv.setAdapter(adapter);
-		
-		//final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(ToDoListController.getToDoList().getToDoList());
-		
 		ToDoListController.getToDoList().addListener(new Listener(){
 
 			@Override
