@@ -27,16 +27,24 @@ public class MainActivity extends Activity {
 		test[1] = new ToDoEvent("b");
 		test[2] = new ToDoEvent("c");
 		ToDoListAdapter adapter = new ToDoListAdapter(this, test);*/
-		int size = ToDoListController.getToDoList().size();
+		
+		
+		
+		
+		Collection<ToDoEvent> events = ToDoListController.getToDoList().getToDoList();
+		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(events);
+		
+		int size = events.size();
 		ToDoEvent[] toDoListArray = new ToDoEvent[size];
 		for (int i=0; i<size; i++){
-			toDoListArray[i] = ToDoListController.getToDoList().getElement(i);
+			toDoListArray[i] = (ToDoListController.getToDoList().getElement(i));
 		}
-	    //toDoListArray = ToDoList.toDoList.toArray(toDoListArray);
+		
 		final ToDoListAdapter adapter = new ToDoListAdapter(this, toDoListArray);
+		//final ToDoListAdapter adapter = new ToDoListAdapter(this, toDoListArray);
 		lv.setAdapter(adapter);
 		
-		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(ToDoListController.getToDoList().getToDoList());
+		//final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(ToDoListController.getToDoList().getToDoList());
 		
 		ToDoListController.getToDoList().addListener(new Listener(){
 
