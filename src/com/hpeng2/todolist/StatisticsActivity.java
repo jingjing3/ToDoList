@@ -12,8 +12,16 @@ public class StatisticsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stats_event);
 		TextView stats = (TextView) findViewById(R.id.statsTextView);
-		int totalEvent =ToDoListController.getToDoList().size();
-		stats.setText("Total todo Event is " + totalEvent);
+		int totalEvent = ToDoListController.getToDoList().size();
+		String sTotalEvent = new Integer(totalEvent).toString();
+		int unarchivedEvent = ToDoListController.getUnarchivedList().size();
+		String sUnarchivedEvent = new Integer(unarchivedEvent).toString();
+		int archievedEvent = ToDoListController.getArchivedList().size();
+		String sArchievedEvent = new Integer(archievedEvent).toString();
+		stats.setText("Total todo Event is " + sTotalEvent +"\n" + 
+					  "Total unarchieved Event is " + sUnarchivedEvent + "\n" +
+					  "Total archived Event is " + sArchievedEvent );
+
 		/*
 		String testing_string = "";
 		for(int i=0; i< ToDoListController.getToDoList().size(); i++){

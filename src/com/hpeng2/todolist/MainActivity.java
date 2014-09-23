@@ -26,49 +26,46 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		final ListView lv = (ListView) findViewById(R.id.toDoListView);
-		Collection<ToDoEvent> events = ToDoListController.getToDoList().getToDoList();
-		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(events);
-		final ToDoListAdapter adapter = new ToDoListAdapter(this, list);
+		Collection<ToDoEvent> events = ToDoListController.getUnarchivedList().getToDoList();
+		final ArrayList<ToDoEvent> unarchivedlist = new ArrayList<ToDoEvent>(events);
+		final ToDoListAdapter adapter = new ToDoListAdapter(this, unarchivedlist);
 		lv.setAdapter(adapter);
 		ToDoListController.getToDoList().addListener(new Listener(){
 
 			@Override
 			public void update() {
-				list.clear();
+				unarchivedlist.clear();
 				Collection<ToDoEvent> updateToDoList = ToDoListController.getToDoList().getToDoList();
-				list.addAll(updateToDoList);
+				unarchivedlist.addAll(updateToDoList);
 				adapter.notifyDataSetChanged();
 				
 			}
 		
 		});
-		//ListView lv1 = getListView();
 		lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 			@Override
-			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id){
-				//Toast.makeText(MainActivity.this, "Deleting " + list.get(position).getTitle().toString(), Toast.LENGTH_SHORT).show();
-				final String items[] = {"Cancel","Remove","Archive","Email"};
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long id){
+				final String items[] = {"Remove","Archive","Email"};
 				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-				alertDialogBuilder.setMessage("Choosing " + list.get(position).getTitle().toString() + " to: ");
+				alertDialogBuilder.setTitle("Choosing " + unarchivedlist.get(position).getTitle().toString() + " to: ");
+				alertDialogBuilder.setCancelable(true);
 				alertDialogBuilder.setItems(items, new DialogInterface.OnClickListener() {
 					
 					public void onClick(DialogInterface d, int choice){
 						if(choice == 0){
-							
-						}
+							ToDoEvent targetEvent = unarchivedlist.get(position);
+							ToDoListController.getToDoList().removeToDoEvent(targetEvent);						}
 						else if (choice == 1){
+							unarchivedlist.get(position).setArchiveFlag(true);
 							
 						}
 						else if (choice == 2){
-							
-						}
-						else if (choice == 3){
-							
+							Toast.makeText(MainActivity.this,"2220",Toast.LENGTH_SHORT).show();
 						}
 					}
 					
 				});
-				alertDialogBuilder.show();
+				alertDialogBuilder.create().show();
 				return true;
 				
 			}
