@@ -5,10 +5,15 @@ import java.util.Collection;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.view.*;
@@ -20,7 +25,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		ListView lv = (ListView) findViewById(R.id.toDoListView);
+		final ListView lv = (ListView) findViewById(R.id.toDoListView);
 		Collection<ToDoEvent> events = ToDoListController.getToDoList().getToDoList();
 		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(events);
 		final ToDoListAdapter adapter = new ToDoListAdapter(this, list);
@@ -37,7 +42,39 @@ public class MainActivity extends Activity {
 			}
 		
 		});
+		//ListView lv1 = getListView();
+		lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id){
+				//Toast.makeText(MainActivity.this, "Deleting " + list.get(position).getTitle().toString(), Toast.LENGTH_SHORT).show();
+				final String items[] = {"Cancel","Remove","Archive","Email"};
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+				alertDialogBuilder.setMessage("Choosing " + list.get(position).getTitle().toString() + " to: ");
+				alertDialogBuilder.setItems(items, new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface d, int choice){
+						if(choice == 0){
+							
+						}
+						else if (choice == 1){
+							
+						}
+						else if (choice == 2){
+							
+						}
+						else if (choice == 3){
+							
+						}
+					}
+					
+				});
+				alertDialogBuilder.show();
+				return true;
+				
+			}
+		});
 	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
