@@ -4,42 +4,41 @@ package com.hpeng2.todolist;
 
 public class ToDoListController {
 	
-	private static ToDoList toDoList = null;
-	private static ToDoList archivedList = new ToDoList();
-	private static ToDoList unarchivedList = new ToDoList();
+	//private static ToDoList toDoList = null;
+	private static ToDoList archivedList = null;
+	private static ToDoList unarchivedList = null;
+	private static ToDoEvent EmailMessage= null;
 	
+	/*
 	static public ToDoList getToDoList(){
 		if (toDoList == null){
 			toDoList = new ToDoList();
 		}
 		return toDoList;
 	}
+	*/
 	
 	static public ToDoList getUnarchivedList(){
-		getToDoList();
-		for (int i = 0; i<toDoList.size(); i++){
-			if (toDoList.getElement(i).getArchiveFlag() == false){
-				unarchivedList.addToDoEvent(toDoList.getElement(i));
-			}
+		if(unarchivedList == null){
+			unarchivedList = new ToDoList();
 		}
 		return unarchivedList;
 		
 	}
 	
 	static public ToDoList getArchivedList(){
-		getToDoList();
-		for (int i=0; i<toDoList.size(); i++){
-			if (toDoList.getElement(i).getArchiveFlag() == true){
-				archivedList.addToDoEvent(toDoList.getElement(i));
-			}
+		if(archivedList == null){
+			archivedList = new ToDoList();
 		}
 		return archivedList;
 		
-		
 	}
 	
-	public void addingAEvent(ToDoEvent newEvent) {
-		 getToDoList().addToDoEvent(newEvent);
+	public void addingAEventToUnarchiveList(ToDoEvent newEvent) {
+		 getUnarchivedList().addToDoEventToUnarchivedList(newEvent);
 	}
-
-}
+	
+	public void addingAEventToarchiveList(ToDoEvent newEvent) {
+		 getArchivedList().addToDoEventToArchivedList(newEvent);
+	}
+}	

@@ -12,24 +12,20 @@ public class StatisticsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stats_event);
 		TextView stats = (TextView) findViewById(R.id.statsTextView);
-		int totalEvent = ToDoListController.getToDoList().size();
-		String sTotalEvent = new Integer(totalEvent).toString();
-		int unarchivedEvent = ToDoListController.getUnarchivedList().size();
-		String sUnarchivedEvent = new Integer(unarchivedEvent).toString();
-		int archievedEvent = ToDoListController.getArchivedList().size();
-		String sArchievedEvent = new Integer(archievedEvent).toString();
+		
+		int NumOfUnarchivedEvent = ToDoListController.getUnarchivedList().sizeOfUnarchivedList();
+		String sUnarchivedEvent = new Integer(NumOfUnarchivedEvent).toString();
+		
+		int NumOfarchievedEvent = ToDoListController.getArchivedList().sizeOfArchivedList();
+		String sArchievedEvent = new Integer(NumOfarchievedEvent).toString();
+		
+		int NumOfTotalEvent = NumOfarchievedEvent+NumOfUnarchivedEvent;
+		String sTotalEvent = new Integer(NumOfTotalEvent).toString();
+		
 		stats.setText("Total todo Event is " + sTotalEvent +"\n" + 
 					  "Total unarchieved Event is " + sUnarchivedEvent + "\n" +
 					  "Total archived Event is " + sArchievedEvent );
-
-		/*
-		String testing_string = "";
-		for(int i=0; i< ToDoListController.getToDoList().size(); i++){
-			testing_string += ToDoListController.getToDoList().getElement(i).getTitle();
-			testing_string += " ";
-		}
-		stats.setText(testing_string);*/
-		}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

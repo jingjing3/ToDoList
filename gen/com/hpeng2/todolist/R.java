@@ -24,6 +24,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int EmailListView=0x7f08000b;
         public static final int action_settings=0x7f080010;
         public static final int addEventDescriptionTextField=0x7f080004;
         public static final int addEventItem=0x7f080011;
@@ -37,7 +38,6 @@ public final class R {
         public static final int emailAddressTextField=0x7f080009;
         public static final int emailEventView=0x7f080008;
         public static final int finishButton=0x7f080005;
-        public static final int listView1=0x7f08000b;
         public static final int rowEventTitleTextView=0x7f08000d;
         public static final int sendButton=0x7f08000a;
         public static final int statisticItem=0x7f080014;

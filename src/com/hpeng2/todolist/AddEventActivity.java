@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 public class AddEventActivity extends Activity {
@@ -29,7 +28,7 @@ public class AddEventActivity extends Activity {
 		EditText titleview = (EditText) findViewById(R.id.addEventTitleTextField);
 		EditText descriptionView = (EditText) findViewById(R.id.addEventDescriptionTextField);
 		ToDoEvent newEvent = new ToDoEvent(titleview.getText().toString());
-		lc.addingAEvent(newEvent);
+		lc.addingAEventToUnarchiveList(newEvent);
 		if (!descriptionView.getText().toString().matches("")){
 			newEvent.setDescription(descriptionView.getText().toString());
 		}

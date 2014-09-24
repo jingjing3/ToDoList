@@ -6,17 +6,14 @@ import java.util.Collection;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.view.*;
 
 public class MainActivity extends Activity {
 	
@@ -26,16 +23,16 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		final ListView lv = (ListView) findViewById(R.id.toDoListView);
-		Collection<ToDoEvent> events = ToDoListController.getUnarchivedList().getToDoList();
+		Collection<ToDoEvent> events = ToDoListController.getUnarchivedList().getUnarchivedList();
 		final ArrayList<ToDoEvent> unarchivedlist = new ArrayList<ToDoEvent>(events);
 		final ToDoListAdapter adapter = new ToDoListAdapter(this, unarchivedlist);
 		lv.setAdapter(adapter);
-		ToDoListController.getToDoList().addListener(new Listener(){
+		ToDoListController.getUnarchivedList().addListener(new Listener(){
 
 			@Override
 			public void update() {
 				unarchivedlist.clear();
-				Collection<ToDoEvent> updateToDoList = ToDoListController.getToDoList().getToDoList();
+				Collection<ToDoEvent> updateToDoList = ToDoListController.getUnarchivedList().getUnarchivedList();
 				unarchivedlist.addAll(updateToDoList);
 				adapter.notifyDataSetChanged();
 				
@@ -43,24 +40,32 @@ public class MainActivity extends Activity {
 		
 		});
 		lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			int cursor = 0;
 			@Override
-			public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int position, long id){
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id){
 				final String items[] = {"Remove","Archive","Email"};
+				cursor = position;
 				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-				alertDialogBuilder.setTitle("Choosing " + unarchivedlist.get(position).getTitle().toString() + " to: ");
+				alertDialogBuilder.setTitle("Choosing " + unarchivedlist.get(cursor).getTitle().toString() + " to: ");
 				alertDialogBuilder.setCancelable(true);
 				alertDialogBuilder.setItems(items, new DialogInterface.OnClickListener() {
 					
+					ToDoEvent targetEvent = unarchivedlist.get(cursor);
 					public void onClick(DialogInterface d, int choice){
 						if(choice == 0){
-							ToDoEvent targetEvent = unarchivedlist.get(position);
-							ToDoListController.getToDoList().removeToDoEvent(targetEvent);						}
+							ToDoListController.getUnarchivedList().removeToDoEventFromUnarchivedList(targetEvent);						}
 						else if (choice == 1){
-							unarchivedlist.get(position).setArchiveFlag(true);
+							ToDoListController.getUnarchivedList().setArchivedFlag(unarchivedlist.get(cursor));
+							ToDoListController.getUnarchivedList().removeToDoEventFromUnarchivedList(targetEvent);
+							ToDoListController.getArchivedList().addToDoEventToArchivedList(targetEvent);
 							
+							adapter.notifyDataSetChanged();
 						}
 						else if (choice == 2){
-							Toast.makeText(MainActivity.this,"2220",Toast.LENGTH_SHORT).show();
+							Intent intent = new Intent(MainActivity.this,EmailEventActivity.class);
+							startActivity(intent);
+							EmailMessage.setEmailMessage(targetEvent);
+							
 						}
 					}
 					

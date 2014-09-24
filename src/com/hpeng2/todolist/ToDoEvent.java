@@ -7,6 +7,7 @@ public class ToDoEvent {
 	private Boolean checkFlag;
 	private Boolean archiveFlag;
 	
+	
 	ToDoEvent(String title){
 		this.title = title;
 		this.checkFlag = false;
