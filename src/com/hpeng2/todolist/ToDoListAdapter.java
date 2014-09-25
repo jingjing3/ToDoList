@@ -31,6 +31,7 @@ public class ToDoListAdapter extends ArrayAdapter<ToDoEvent>{
 		 convertView = inflater.inflate(R.layout.row, parent, false); 
 		 TextView name = (TextView) convertView.findViewById(R.id.rowEventTitleTextView);
 		 CheckBox cb = (CheckBox) convertView.findViewById(R.id.checkBox);
+		 
 		 cb.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -38,11 +39,8 @@ public class ToDoListAdapter extends ArrayAdapter<ToDoEvent>{
 				toDoListArray.get(cursor).setCheckFlag(((CheckBox)v).isChecked());
 			}
 		});
+		 cb.setChecked(toDoListArray.get(cursor).getCheckFlag());
 		 name.setText(toDoListArray.get(cursor).getTitle());
-		 if(toDoListArray.get(cursor).getCheckFlag() == true){
-		 cb.setChecked(true);}
-		 else{
-		 cb.setChecked(false);}
 		 return convertView;
 	}
 

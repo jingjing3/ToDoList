@@ -1,19 +1,22 @@
 package com.hpeng2.todolist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ToDoList {
+public class ToDoList implements Serializable{
 	
-	//protected ArrayList<ToDoEvent> toDoList = null;
-	protected ArrayList<Listener> listeners = null;
+
+	/**
+	 * toDoList serialization ID
+	 */
+	private static final long serialVersionUID = -7079365064015257526L;
+
+	protected transient ArrayList<Listener> listeners = null;
 	
 	protected ArrayList<ToDoEvent> archivedList = null;
 	protected ArrayList<ToDoEvent> unarchivedList = null;
-	private static ToDoEvent emailMessage = null; 
-	
 	public ToDoList(){
-		//toDoList = new ArrayList<ToDoEvent>();
 		archivedList = new ArrayList<ToDoEvent>();
 		unarchivedList = new ArrayList<ToDoEvent>();
 		listeners = new ArrayList<Listener>();
@@ -33,26 +36,6 @@ public class ToDoList {
 	public Collection<ToDoEvent> getUnarchivedList(){
 		return unarchivedList;
 	}
-	
-	/*
-	public Collection<ToDoEvent> getToDoList(){
-		return toDoList;
-	}
-	*/
-	/*
-	public ToDoList getArchivedLists(){
-		if (archivedList == null){
-			archivedList = new ToDoList();
-		}
-		return archivedList;
-	}
-	
-	public ToDoList getUnarchivedLists(){
-		if(unarchivedList == null){
-			unarchivedList = new ToDoList();
-		}
-		return unarchivedList;
-	}*/
 	
 	public void addToDoEventToUnarchivedList(ToDoEvent newToDoEvent){
 		unarchivedList.add(newToDoEvent);
@@ -86,10 +69,6 @@ public class ToDoList {
 		targetToDoEvent.setArchiveFlag(false);
 		notifyListeners();
 	}
-
-	//public int sizeOfToDoList(){
-	//	return toDoList.size();
-	//}
 	
 	public int sizeOfArchivedList(){
 		return archivedList.size();
@@ -99,25 +78,41 @@ public class ToDoList {
 		return unarchivedList.size();
 	}
 	
-	//public ToDoEvent getElementFromToDoList(int i){
-	//	return toDoList.get(i);
-	//}
-	
 	public ToDoEvent getElementFromArchivedList(int i){
 		return archivedList.get(i);
 	}
 
-	public ToDoEvent getElementFromUnarchivedtLis(int i){
+	public ToDoEvent getElementFromUnarchivedtList(int i){
 		return unarchivedList.get(i);
+	}
+	
+	public int numOfCompleteUnarchivedList(){
+		int num =0;
+		for(int i = 0; i < getUnarchivedList().size(); i++){
+			if (getElementFromUnarchivedtList(i).getCheckFlag()){
+				num++;
+			}
+		}
+		return num;
+	}
+	
+	public int numOfCompleteArchivedList() {
+		int num =0;
+		for(int i = 0; i < getArchivedList().size(); i++){
+			if (getElementFromArchivedList(i).getCheckFlag()){
+				num++;
+			}
+		}
+		return num;
 	}
 
 
 	public void addListener(Listener l){
-		listeners.add(l);
+		getListeners().add(l);
 	}
 	
 	public void removeListener(Listener l){
-		listeners.remove(l);
+		getListeners().remove(l);
 	}
 	
 	public void notifyListeners(){
@@ -125,6 +120,8 @@ public class ToDoList {
 			listener.update();
 		}
 	}
+
+
 	
 	
 

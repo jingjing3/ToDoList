@@ -11,7 +11,24 @@ public class StatisticsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stats_event);
+		ToDoListManager.initManager(this.getApplicationContext());
+		
+	}
+	@Override
+	protected void onResume(){
+		super.onResume();
 		TextView stats = (TextView) findViewById(R.id.statsTextView);
+		
+		stats.setTextSize(18);
+		
+		int NumOfCompleteEventFromArchivedList = ToDoListController.getArchivedList().numOfCompleteArchivedList();
+		String sNumOfCompleteEventFromArchivedList = new Integer(NumOfCompleteEventFromArchivedList).toString();
+		
+		int NumOfCompleteEventFromUnarchivedList = ToDoListController.getUnarchivedList().numOfCompleteUnarchivedList();
+		//String sNumOfCompleteEventFromUnarchivedList = new Integer(NumOfCompleteEventFromUnarchivedList).toString();
+		
+		int NumOfTotalCompleteEvent = NumOfCompleteEventFromArchivedList + NumOfCompleteEventFromUnarchivedList;
+		String sNumOfCompleteTotalEvent = new Integer(NumOfTotalCompleteEvent).toString();
 		
 		int NumOfUnarchivedEvent = ToDoListController.getUnarchivedList().sizeOfUnarchivedList();
 		String sUnarchivedEvent = new Integer(NumOfUnarchivedEvent).toString();
@@ -22,9 +39,20 @@ public class StatisticsActivity extends Activity {
 		int NumOfTotalEvent = NumOfarchievedEvent+NumOfUnarchivedEvent;
 		String sTotalEvent = new Integer(NumOfTotalEvent).toString();
 		
-		stats.setText("Total todo Event is " + sTotalEvent +"\n" + 
-					  "Total unarchieved Event is " + sUnarchivedEvent + "\n" +
-					  "Total archived Event is " + sArchievedEvent );
+		int NumofTotalUncompleteEvent = NumOfTotalEvent - NumOfTotalCompleteEvent;
+		String sNumofTotalUncompleteEvent = new Integer(NumofTotalUncompleteEvent).toString();
+		
+		int NumofTotalarchivedUncompleteEvent = NumOfarchievedEvent - NumOfCompleteEventFromArchivedList;
+		String sNumofTotalarchivedUncompleteEvent = new Integer(NumofTotalarchivedUncompleteEvent).toString();
+		
+		stats.setText("Total # of Todo Event is " + sTotalEvent +"\n" + "\n" +
+					  "Total # of Unarchieved Event is " + sUnarchivedEvent + "\n" +
+					  "Total # of Archived Event is " + sArchievedEvent + "\n" + "\n" +
+					  "Total # of Uncompleted Event is " + sNumofTotalUncompleteEvent + "\n" +
+					  "Total # of Completed Event is " + sNumOfCompleteTotalEvent + "\n" + "\n" +
+					  "Total # of Archived Completed Event is " + sNumOfCompleteEventFromArchivedList + "\n" +
+					  "Total # of Archived Uncomplete Event is " + sNumofTotalarchivedUncompleteEvent);
+		
 	}
 
 	@Override

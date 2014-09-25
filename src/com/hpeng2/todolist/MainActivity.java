@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		ToDoListManager.initManager(this.getApplicationContext());
+		
 		final ListView lv = (ListView) findViewById(R.id.toDoListView);
 		Collection<ToDoEvent> events = ToDoListController.getUnarchivedList().getUnarchivedList();
 		final ArrayList<ToDoEvent> unarchivedlist = new ArrayList<ToDoEvent>(events);

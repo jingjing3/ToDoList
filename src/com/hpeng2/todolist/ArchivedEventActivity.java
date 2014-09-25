@@ -19,6 +19,7 @@ public class ArchivedEventActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.archive_event);
+		ToDoListManager.initManager(this.getApplicationContext());
 		final ListView lv = (ListView) findViewById(R.id.archivedEventListView);
 		Collection<ToDoEvent> events = ToDoListController.getArchivedList().getArchivedList();
 		final ArrayList<ToDoEvent> archivedList = new ArrayList<ToDoEvent>(events);

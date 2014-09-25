@@ -1,6 +1,13 @@
 package com.hpeng2.todolist;
 
-public class ToDoEvent {
+import java.io.Serializable;
+
+public class ToDoEvent implements Serializable{
+	
+	/**
+	 * toDoEvent Serializable ID
+	 */
+	private static final long serialVersionUID = 3077342873414218030L;
 	
 	private String title;
 	private String description;
@@ -12,6 +19,7 @@ public class ToDoEvent {
 		this.title = title;
 		this.checkFlag = false;
 		this.archiveFlag = false;
+		this.description = "";
 	}
 
 	public String getTitle() {

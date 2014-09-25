@@ -18,14 +18,15 @@ public class EmailEventActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.email_event);
-		
+		ToDoListManager.initManager(this.getApplicationContext());
+		//Collection<ToDoEvent> allEvents = null;
+		ToDoEvent selectEvent = EmailMessage.getEmailMessage();
 		ListView lv = (ListView) findViewById(R.id.EmailListView);
-		lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-		lv.setItemsCanFocus(false);
-		Collection<ToDoEvent> allEvents = ToDoListController.getArchivedList().getArchivedList();
-		allEvents.addAll(ToDoListController.getUnarchivedList().getUnarchivedList());
-		final ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>(allEvents);
-		final ToDoListAdapter adapter = new ToDoListAdapter(this, list);
+		//allEvents = ToDoListController.getArchivedList().getArchivedList();
+		//allEvents.addAll(ToDoListController.getUnarchivedList().getUnarchivedList());
+		ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>();
+		list.add(selectEvent);
+		ToDoListAdapter adapter = new ToDoListAdapter(this, list);
 		lv.setAdapter(adapter);
 		
 		
