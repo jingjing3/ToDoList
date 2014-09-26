@@ -5,6 +5,10 @@ import android.app.Activity;
 import android.view.Menu;
 import android.widget.TextView;
 
+/*This activity is used to show the statistics about the todolist, this activity will be
+ * called through the menu from the main activity and can used the return button to get
+ * back to the main.*/
+
 public class StatisticsActivity extends Activity {
 
 	@Override
@@ -25,7 +29,6 @@ public class StatisticsActivity extends Activity {
 		String sNumOfCompleteEventFromArchivedList = new Integer(NumOfCompleteEventFromArchivedList).toString();
 		
 		int NumOfCompleteEventFromUnarchivedList = ToDoListController.getUnarchivedList().numOfCompleteUnarchivedList();
-		//String sNumOfCompleteEventFromUnarchivedList = new Integer(NumOfCompleteEventFromUnarchivedList).toString();
 		
 		int NumOfTotalCompleteEvent = NumOfCompleteEventFromArchivedList + NumOfCompleteEventFromUnarchivedList;
 		String sNumOfCompleteTotalEvent = new Integer(NumOfTotalCompleteEvent).toString();

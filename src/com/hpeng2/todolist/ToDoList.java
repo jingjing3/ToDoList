@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ToDoList implements Serializable{
-	
+	/*This class define to do list which will be a list of to do event, and it is build by
+	 * creating two separate list, one is archive list and the other one is unarchied list 
+	 * to implement. Listeners are added into this class to observe any changes of lists
+	 * and some simplified function is implemented to ensure efficiency of the code outside
+	 * of the class */
 
 	/**
 	 * toDoList serialization ID
@@ -59,7 +63,6 @@ public class ToDoList implements Serializable{
 		notifyListeners();
 	}
 	
-	
 	public void setArchivedFlag(ToDoEvent targetToDoEvent){
 		targetToDoEvent.setArchiveFlag(true);
 		notifyListeners();
@@ -69,6 +72,7 @@ public class ToDoList implements Serializable{
 		targetToDoEvent.setArchiveFlag(false);
 		notifyListeners();
 	}
+
 	
 	public int sizeOfArchivedList(){
 		return archivedList.size();

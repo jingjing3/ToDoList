@@ -2,7 +2,8 @@ package com.hpeng2.todolist;
 
 import java.io.IOException;
 
-
+/*This class is used to connect the to do list to the activity, for activity, this class
+ * will be called to get the archived list and unarchived list*/
 
 public class ToDoListController {
 	
@@ -22,11 +23,9 @@ public class ToDoListController {
 				});
 				
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException("could not deserialize studentlist from studentListManager");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException("could not deserialize studentlist from studentListManager");
 			}
@@ -41,7 +40,6 @@ public class ToDoListController {
 				String key = ToDoListManager.getUKey();
 				ToDoListManager.getManager().saveToDoList(getUnarchivedList(),file,key);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException("could not deserialize studentlist from studentListManager");
 			}
@@ -61,11 +59,9 @@ public class ToDoListController {
 				});
 				
 			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException("could not deserialize studentlist from studentListManager");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new RuntimeException("could not deserialize studentlist from studentListManager");
 			}
@@ -80,7 +76,6 @@ public class ToDoListController {
 			String key = ToDoListManager.getAKey();
 			ToDoListManager.getManager().saveToDoList(getArchivedList(),file,key);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new RuntimeException("could not deserialize studentlist from studentListManager");
 		}

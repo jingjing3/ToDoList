@@ -7,6 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/* Add Event Activity Class is an android activity class which will be called
+ * every time when users hit menu option: Add an Event, and it will bring a new
+ * UI for users to input their descriptions and titles for the to do events. One
+ * Implemented function included, it will be called every time when user press
+ * and button.
+ */
+
 public class AddEventActivity extends Activity {
 
 	@Override
@@ -23,7 +30,6 @@ public class AddEventActivity extends Activity {
 	}
 	
 	public void AddAEvent(View v){
-		Toast.makeText(this, "adding a event", Toast.LENGTH_SHORT).show();
 		ToDoListController lc = new ToDoListController();
 		EditText titleview = (EditText) findViewById(R.id.addEventTitleTextField);
 		EditText descriptionView = (EditText) findViewById(R.id.addEventDescriptionTextField);
@@ -32,6 +38,7 @@ public class AddEventActivity extends Activity {
 		if (!descriptionView.getText().toString().matches("")){
 			newEvent.setDescription(descriptionView.getText().toString());
 		}
+		Toast.makeText(this, "Finishing Adding", Toast.LENGTH_SHORT).show();
 		
 	}
 

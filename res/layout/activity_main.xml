@@ -25,6 +25,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/toDoListTextView"
+        android:clickable="true"
         android:longClickable="true" >
 
     </ListView>

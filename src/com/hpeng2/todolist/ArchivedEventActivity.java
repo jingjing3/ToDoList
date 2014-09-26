@@ -13,6 +13,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+/*ArchivedEventActivity Class is an android activity class which will be called
+ * every time when user want to archive chosen to do thing. And it will bring a
+ * new UI which contains all the archived archived to do event.
+ * 
+ * ArrayAdapter is used to represent the archived List with the check box. And long
+ * Click on the list View can bring a menu to choose remove, unarchive or email the 
+ * chosen event. */
+
 public class ArchivedEventActivity extends Activity {
 
 	@Override

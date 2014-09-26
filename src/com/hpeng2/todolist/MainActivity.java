@@ -15,6 +15,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/*In the main activity, the to do list view will be shown and the main menu is in
+ * on the main layout, it can be called by pressing three dot or use the Menu button
+ * in the emulator.
+ * 
+ * ArrayAdapter is used to represent the archived List with the check box. And long
+ * Click on the list View can bring a menu to choose remove, archive or email the 
+ * chosen event.*/
+
 public class MainActivity extends Activity {
 	
 
@@ -82,7 +90,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}

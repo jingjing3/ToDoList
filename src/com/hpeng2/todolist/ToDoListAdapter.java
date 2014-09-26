@@ -12,6 +12,11 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+/*This class implement the array adapter for the list view, it inherit its super class
+ * array adapter. By overwriting getView method, each row of list view will contain a
+ * checkbox with the to do events' title beside it. And the flag will be modified by
+ * check and uncheck the list view*/
+
 public class ToDoListAdapter extends ArrayAdapter<ToDoEvent>{
 	
 	ArrayList<ToDoEvent> toDoListArray = null;

@@ -14,7 +14,7 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="drawing.svg">
   <defs
      id="defs4">
@@ -573,8 +573,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.41682205"
-     inkscape:cx="717.42288"
-     inkscape:cy="-2033.3934"
+     inkscape:cx="1005.3155"
+     inkscape:cy="-2897.0713"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -584,8 +584,8 @@
      inkscape:snap-page="false"
      inkscape:window-width="1280"
      inkscape:window-height="839"
-     inkscape:window-x="395"
-     inkscape:window-y="139"
+     inkscape:window-x="46"
+     inkscape:window-y="140"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -5139,17 +5139,6 @@
          y="3245.5042"
          x="1300.5421"
          sodipodi:role="line">ta.ca</tspan></text>
-    <text
-       sodipodi:linespacing="125%"
-       id="text7150"
-       y="2967.1194"
-       x="1803.4668"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="2967.1194"
-         x="1803.4668"
-         id="tspan7152"
-         sodipodi:role="line">ToDoList</tspan></text>
     <rect
        y="3364.9285"
        x="985.08368"
@@ -8027,133 +8016,6 @@
        x="548.52313"
        y="1137.4323" />
     <rect
-       y="1779.2911"
-       x="183.53154"
-       height="168.53714"
-       width="155.34207"
-       id="rect4523"
-       style="fill:#808080" />
-    <rect
-       y="1791.1533"
-       x="193.12798"
-       height="35.586735"
-       width="134.34991"
-       id="rect4525"
-       style="fill:#4d4d4d" />
-    <rect
-       y="1829.2725"
-       x="192.52824"
-       height="35.586735"
-       width="134.34991"
-       id="rect4527"
-       style="fill:#4d4d4d" />
-    <rect
-       y="1867.3916"
-       x="192.32829"
-       height="35.586735"
-       width="134.34991"
-       id="rect4529"
-       style="fill:#4d4d4d" />
-    <text
-       transform="scale(1.0385816,0.96285165)"
-       sodipodi:linespacing="125%"
-       id="text4531"
-       y="1891.8286"
-       x="222.91327"
-       style="font-size:25.67604446px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="1891.8286"
-         x="222.91327"
-         id="tspan4533"
-         sodipodi:role="line">Add </tspan></text>
-    <text
-       transform="scale(1.0110978,0.98902401)"
-       sodipodi:linespacing="125%"
-       id="text4535"
-       y="1878.5769"
-       x="203.40285"
-       style="font-size:24.99658394px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="1878.5769"
-         x="203.40285"
-         id="tspan4537"
-         sodipodi:role="line">Email All</tspan></text>
-    <text
-       transform="scale(1.0385816,0.96285165)"
-       sodipodi:linespacing="125%"
-       id="text4539"
-       y="1969.8533"
-       x="200.19856"
-       style="font-size:25.67604446px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="1969.8533"
-         x="200.19856"
-         id="tspan4541"
-         sodipodi:role="line">Statistic</tspan></text>
-    <rect
-       style="fill:#808080"
-       id="rect4551"
-       width="310.68414"
-       height="44.383423"
-       x="19.192842"
-       y="1962.8226" />
-    <rect
-       style="fill:#666666"
-       id="rect4553"
-       width="95.964226"
-       height="35.986565"
-       x="22.791502"
-       y="1967.6208" />
-    <rect
-       style="fill:#4d4d4d"
-       id="rect4555"
-       width="94.764664"
-       height="35.98658"
-       x="124.75347"
-       y="1967.6208" />
-    <rect
-       style="fill:#666666"
-       id="rect4557"
-       width="98.363319"
-       height="35.986546"
-       x="225.51588"
-       y="1966.4213" />
-    <text
-       xml:space="preserve"
-       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="23.991053"
-       y="2000.0088"
-       id="text4559"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4561"
-         x="23.991053"
-         y="2000.0088"
-         style="font-size:20px">Remove</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="127.15258"
-       y="2000.0088"
-       id="text4563"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4565"
-         x="127.15258"
-         y="2000.0088"
-         style="font-size:24px">Archive</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="231.51366"
-       y="2001.2083"
-       id="text4567"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4569"
-         x="231.51366"
-         y="2001.2083">Email</tspan></text>
-    <rect
        y="2194.3362"
        x="657.35486"
        height="44.383423"
@@ -8374,24 +8236,6 @@
          id="tspan4663"
          x="495.41525"
          y="1261.0844">Archive</tspan></text>
-    <rect
-       style="fill:#4d4d4d"
-       id="rect4665"
-       width="134.34991"
-       height="35.586735"
-       x="195.9269"
-       y="1905.7772" />
-    <text
-       sodipodi:linespacing="125%"
-       id="text4667"
-       y="1931.6343"
-       x="213.52037"
-       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
-         y="1931.6343"
-         x="213.52037"
-         id="tspan4669"
-         sodipodi:role="line">Archive</tspan></text>
     <rect
        style="fill:#808080"
        id="rect4673"
@@ -8726,88 +8570,6 @@
          x="1110.7858"
          id="tspan4794"
          sodipodi:role="line">Archive</tspan></text>
-    <rect
-       style="fill:#808080"
-       id="rect4797"
-       width="155.34207"
-       height="168.53714"
-       x="93.565033"
-       y="3634.999" />
-    <rect
-       style="fill:#4d4d4d"
-       id="rect4799"
-       width="134.34991"
-       height="35.586735"
-       x="103.16147"
-       y="3646.8613" />
-    <rect
-       style="fill:#4d4d4d"
-       id="rect4801"
-       width="134.34991"
-       height="35.586735"
-       x="102.56174"
-       y="3684.9805" />
-    <rect
-       style="fill:#4d4d4d"
-       id="rect4803"
-       width="134.34991"
-       height="35.586735"
-       x="102.36179"
-       y="3723.0996" />
-    <text
-       xml:space="preserve"
-       style="font-size:25.67604446px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="136.28888"
-       y="3819.1328"
-       id="text4805"
-       sodipodi:linespacing="125%"
-       transform="scale(1.0385816,0.96285165)"><tspan
-         sodipodi:role="line"
-         id="tspan4807"
-         x="136.28888"
-         y="3819.1328">Add </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:24.99658394px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="114.42383"
-       y="3754.8792"
-       id="text4809"
-       sodipodi:linespacing="125%"
-       transform="scale(1.0110978,0.98902401)"><tspan
-         sodipodi:role="line"
-         id="tspan4811"
-         x="114.42383"
-         y="3754.8792">Email All</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:25.67604446px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="113.57428"
-       y="3897.1575"
-       id="text4813"
-       sodipodi:linespacing="125%"
-       transform="scale(1.0385816,0.96285165)"><tspan
-         sodipodi:role="line"
-         id="tspan4815"
-         x="113.57428"
-         y="3897.1575">Statistic</tspan></text>
-    <rect
-       y="3761.4851"
-       x="105.96042"
-       height="35.586735"
-       width="134.34991"
-       id="rect4817"
-       style="fill:#4d4d4d" />
-    <text
-       xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="123.55392"
-       y="3787.3423"
-       id="text4819"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4821"
-         x="123.55392"
-         y="3787.3423">Archive</tspan></text>
     <image
        y="3710.2976"
        x="1153.2117"

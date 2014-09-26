@@ -1,8 +1,6 @@
 package com.hpeng2.todolist;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +10,17 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/*EmailEventActivity is an android activity and will be called every time when user try
+ * to email a chosen event by long clicking the target event. This activity bring out 
+ * a layout for user to type an email address and email the chosen event
+ * 
+ * ArrayAdapter is used to keep track on the events in the list and it will get the 
+ * Email information from the last activity. And use android build in method to send
+ * the Email by the android email app.
+ * 
+ * The idea and implemented style is from http://stackoverflow.com/questions/2197741
+ * /how-can-i-send-emails-from-my-android-application */
+
 public class EmailEventActivity extends Activity {
 
 	@Override
@@ -19,20 +28,12 @@ public class EmailEventActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.email_event);
 		ToDoListManager.initManager(this.getApplicationContext());
-		//Collection<ToDoEvent> allEvents = null;
 		ToDoEvent selectEvent = EmailMessage.getEmailMessage();
 		ListView lv = (ListView) findViewById(R.id.EmailListView);
-		//allEvents = ToDoListController.getArchivedList().getArchivedList();
-		//allEvents.addAll(ToDoListController.getUnarchivedList().getUnarchivedList());
 		ArrayList<ToDoEvent> list = new ArrayList<ToDoEvent>();
 		list.add(selectEvent);
 		ToDoListAdapter adapter = new ToDoListAdapter(this, list);
-		lv.setAdapter(adapter);
-		
-		
-		
-		
-		
+		lv.setAdapter(adapter);	
 	}
 
 	@Override

@@ -2,6 +2,11 @@ package com.hpeng2.todolist;
 
 import java.io.Serializable;
 
+/*This class is the basic to do event class and it will declare the type for every single
+ * to do event, the attribute will include the title, description and two flag, one is to
+ * indicate whether it is completed or not and the other one is to indicate if the event
+ * is archived or not. Getters and setters are used to get the private attribute */
+
 public class ToDoEvent implements Serializable{
 	
 	/**

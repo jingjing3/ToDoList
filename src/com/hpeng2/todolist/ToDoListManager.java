@@ -5,12 +5,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OptionalDataException;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.util.Base64;
+
+/*This class is implemented to save and load the to do list. The implement method and idea
+ * of storing and loading files is from Dr.Hindle's Student Picker video*/
 
 public class ToDoListManager {
 	static final String upreFile = "UnarchivedToDoList";
