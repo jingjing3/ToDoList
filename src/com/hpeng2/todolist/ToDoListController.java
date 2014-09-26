@@ -3,7 +3,9 @@ package com.hpeng2.todolist;
 import java.io.IOException;
 
 /*This class is used to connect the to do list to the activity, for activity, this class
- * will be called to get the archived list and unarchived list*/
+ * will be called to get the archived list and unarchived list
+ * 
+ * Inspired by Saving and loading method from Dr.Hindle's StudentPicker App*/
 
 public class ToDoListController {
 	
